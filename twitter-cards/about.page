@@ -3,7 +3,6 @@ title: Twitter Cards
 description: Automatically insert [Twitter Cards](https://dev.twitter.com/cards/overview "Twitter Cards") meta tags in the `<head>` section.
 author: Taufik Nurrohman
 type: Markdown
-link: http://mecha-cms.com
 version: 2.0.0
 ...
 
