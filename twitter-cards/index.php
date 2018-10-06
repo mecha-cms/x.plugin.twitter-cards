@@ -1,6 +1,6 @@
 <?php
 
-function fn_twitter_cards_replace($content) {
+function fn_twitter_cards($content) {
     if ($page = Lot::get('page')) {
         global $site, $url;
         $state = Plugin::state(__DIR__);
@@ -18,4 +18,4 @@ function fn_twitter_cards_replace($content) {
     return $content;
 }
 
-Hook::set('shield.output', 'fn_twitter_cards_replace', 1.9);
+Hook::set('shield.yield', 'fn_twitter_cards', 1.9);
