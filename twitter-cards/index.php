@@ -1,7 +1,7 @@
 <?php namespace fn;
 
 function twitter_cards($content) {
-    extract(\Lot::get());
+    extract(\Lot::get(), EXTR_SKIP);
     if (!empty($page)) {
         $state = \Plugin::state('twitter-cards');
         $out  = '<!-- Begin Twitter Cards -->';
