@@ -1,7 +1,7 @@
 <?php namespace fn;
 
 function twitter_cards($content) {
-    extract(\Lot::get(), EXTR_SKIP);
+    extract(\Lot::get(), \EXTR_SKIP);
     if (!empty($page)) {
         $state = \Plugin::state('twitter-cards');
         $out  = '<!-- Begin Twitter Cards -->';
@@ -13,7 +13,7 @@ function twitter_cards($content) {
         $out .= '<meta name="twitter:description" content="' . \To::text($page->description ?: $config->description) . '">';
         $out .= '<meta name="twitter:image" content="' . ($page->image ?: $url . '/favicon.ico') . '">';
         $out .= '<!-- End Twitter Cards -->';
-        return str_replace('</head>', $out . '</head>', $content);
+        return \str_replace('</head>', $out . '</head>', $content);
     }
     return $content;
 }
