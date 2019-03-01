@@ -18,4 +18,4 @@ function twitter_cards($content) {
     return $content;
 }
 
-\Hook::set('shield.yield', __NAMESPACE__ . "\\twitter_cards", 1.9);
+\Hook::set('content', __NAMESPACE__ . "\\twitter_cards", 1.9);
