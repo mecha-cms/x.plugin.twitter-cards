@@ -1,5 +1,5 @@
-Twitter Cards Extension for Mecha
-=================================
+Twitter Cards Extension for [Mecha](https://github.com/mecha-cms/mecha)
+=======================================================================
 
 Release Notes
 -------------
