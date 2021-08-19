@@ -3,7 +3,7 @@ title: Twitter Cards
 description: Automatically insert [Twitter Cards](https://dev.twitter.com/cards/overview "Twitter Cards") meta tags in the `<head>` section.
 author: Taufik Nurrohman
 type: Markdown
-version: 2.3.2
+version: 2.3.3
 
 use:
   '.\lot\x\layout': 1

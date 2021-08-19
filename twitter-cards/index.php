@@ -1,4 +1,4 @@
-<?php namespace _\lot\x;
+<?php namespace x;
 
 function twitter_cards($content) {
     extract($GLOBALS, \EXTR_SKIP);
@@ -14,7 +14,7 @@ function twitter_cards($content) {
         }
         $out .= '<meta name="twitter:image" content="' . ($page->image ?? $url . '/favicon.ico') . '">';
         $out .= '<!-- End Twitter Cards -->';
-        return \str_replace('</head>', $out . '</head>', $content);
+        return \strtr($content, ['</head>' => $out . '</head>']);
     }
     return $content;
 }
