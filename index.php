@@ -1,7 +1,7 @@
 <?php namespace x;
 
 function twitter_cards($content) {
-    extract($GLOBALS, \EXTR_SKIP);
+    \extract($GLOBALS, \EXTR_SKIP);
     if (!empty($page)) {
         $out  = '<!-- Begin Twitter Cards -->';
         $out .= '<meta name="twitter:card" content="' . ($page->image ? 'summary_large_image' : 'summary') . '">';

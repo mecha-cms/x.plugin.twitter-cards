@@ -1,0 +1,5 @@
+{
+  "description": "Automatically insert Twitter Cards meta tags in the `<head>` section.",
+  "license": "GPL-3.0-or-later",
+  "name": "mecha-cms/x.twitter-cards"
+}
