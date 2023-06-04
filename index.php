@@ -1,22 +1,22 @@
-<?php namespace x;
+<?php namespace x\twitter_cards;
 
-function twitter_cards($content) {
+function content($content) {
     \extract($GLOBALS, \EXTR_SKIP);
     if (!empty($page)) {
         $out  = '<!-- Begin Twitter Cards -->';
-        $out .= '<meta name="twitter:card" content="' . ($page->image ? 'summary_large_image' : 'summary') . '">';
-        $out .= !empty($site->x->{'twitter-cards'}->site) ? '<meta name="twitter:site" content="@' . $site->x->{'twitter-cards'}->site . '">' : "";
-        $out .= !empty($site->x->{'twitter-cards'}->creator) ? '<meta name="twitter:creator" content="@' . $site->x->{'twitter-cards'}->creator . '">' : "";
-        $out .= '<meta name="twitter:title" content="' . \w($page->title ?? $t) . '">';
-        $out .= '<meta name="twitter:url" content="' . \r('&', '&amp;', $url->current) . '">';
-        if ($w = \w($page->description ?? $site->description ?? "")) {
-            $out .= '<meta name="twitter:description" content="' . $w . '">';
+        $out .= '<meta content="' . ($page->image ? 'summary_large_image' : 'summary') . '" name="twitter:card">';
+        $out .= !empty($state->x->{'twitter-cards'}->creator) ? '<meta content="@' . $state->x->{'twitter-cards'}->creator . '" name="twitter:creator">' : "";
+        if ($description = \w($page->description ?? $site->description ?? "")) {
+            $out .= '<meta content="' . \eat($description) . '" name="twitter:description">';
         }
-        $out .= '<meta name="twitter:image" content="' . ($page->image ?? $url . '/favicon.ico') . '">';
+        $out .= '<meta content="' . \eat($page->image ?? $url . '/favicon.ico') . '" name="twitter:image">';
+        $out .= !empty($state->x->{'twitter-cards'}->site) ? '<meta content="@' . $state->x->{'twitter-cards'}->site . '" name="twitter:site">' : "";
+        $out .= '<meta content="' . \w($page->title ?? $t ?? "") . '" name="twitter:title">';
+        $out .= '<meta content="' . \eat($url->current) . '" name="twitter:url">';
         $out .= '<!-- End Twitter Cards -->';
         return \strtr($content, ['</head>' => $out . '</head>']);
     }
     return $content;
 }
 
-\Hook::set('content', __NAMESPACE__ . "\\twitter_cards", 1.9);
+\Hook::set('content', __NAMESPACE__ . "\\content", 1.9);
