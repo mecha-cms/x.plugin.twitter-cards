@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'site' => "", // Website attribution
+    'site' => "", // Site attribution without the `@` prefix
     'creator' => "" // Twitter user name without the `@` prefix
 ];
